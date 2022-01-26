@@ -23,7 +23,7 @@ const preMovie = async() => {
 
     let ticket = await person3PromiseToShowTicketWhenWifeArrives;
 
-    let [popcorn, candy, coke] =
+    let [popcorn, candy, coke , butter] =
     await Promise.all([getPopcorn, getCandy, getCoke, getButter]);
 
     console.log('got ' + popcorn + ', ' + candy + ', ' + coke + ',' + butter);
