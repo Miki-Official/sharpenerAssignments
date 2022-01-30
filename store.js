@@ -11,8 +11,17 @@ function saveToLocalStorage(event) {
       email,
       phonenumber
   }
-  localStorage.setItem(obj.email, JSON.stringify(obj))
-  showNewUserOnScreen(obj)
+  axios.post("https://crudcrud.com/api/1748f0b8b5bd44d28f50820fd7b87eb2/AppointmentData",obj)
+  .then((respone) =>  {
+           showNewUserOnScreen(respone.data)
+            //console.log(respone)
+  })
+  .catch((err)=> {
+            document.body.innerHTML =document.body.innerHTML + "<h4>Something went wrong</h4>"
+           console.log(err)
+  })
+  //localStorage.setItem(obj.email, JSON.stringify(obj))
+  //showNewUserOnScreen(obj)
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -44,13 +53,20 @@ function showNewUserOnScreen(user){
 
   parentNode.innerHTML = parentNode.innerHTML + childHTML;
 }
+
+//Edit User
+
 function editUserDetails(emailId, name, phonenumber){
 
   document.getElementById('email').value = emailId;
   document.getElementById('username').value = name;
   document.getElementById('phonenumber').value =phonenumber;
+
   deleteUser(emailId)
 }
+
+// deleteUser('abc@gmail.com')
+
 function deleteUser(emailId){
   console.log(emailId)
   localStorage.removeItem(emailId);
