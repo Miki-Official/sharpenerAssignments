@@ -44,20 +44,13 @@ function showNewUserOnScreen(user){
 
   parentNode.innerHTML = parentNode.innerHTML + childHTML;
 }
-
-//Edit User
-
 function editUserDetails(emailId, name, phonenumber){
 
   document.getElementById('email').value = emailId;
   document.getElementById('username').value = name;
   document.getElementById('phonenumber').value =phonenumber;
-
   deleteUser(emailId)
 }
-
-// deleteUser('abc@gmail.com')
-
 function deleteUser(emailId){
   console.log(emailId)
   localStorage.removeItem(emailId);
