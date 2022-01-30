@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html lang='en'>
+<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-    intial-scale=1.0">
-    <meta http- epuiv="X-UA-Compatible" content="ie=edge">
-    <title>Js async</title>
-</head>
+<head> </head>
 
 <body>
-    <script src="promise.js"></script>
+  <form onsubmit="saveToLocalStorage(event)">
+    <label>Name</label>
+    <input type="text" id="username" name="name">
+    <label>Email</label>
+    <input type="email" id="email" name="emailId">
+    <label>phoneNumber</label>
+    <input type="tel" id="phonenumber" name="phonenumber">
+    <button>Submit</button>
+  </form>
+
+  <ul id='listOfUsers'></ul>
+  <script src="store.js">
+  </script>
 </body>
 
 </html>
