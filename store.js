@@ -11,10 +11,10 @@ function saveToLocalStorage(event) {
       email,
       phonenumber
   }
-  axios.post("https://crudcrud.com/api/1748f0b8b5bd44d28f50820fd7b87eb2/AppointmentData",obj)
+  axios.post("https://crudcrud.com/api/42fac32cc49442d58a3cf398737b48fc/myData",obj)
   .then((respone) =>  {
            showNewUserOnScreen(respone.data)
-            //console.log(respone)
+            console.log(respone)
   })
   .catch((err)=> {
             document.body.innerHTML =document.body.innerHTML + "<h4>Something went wrong</h4>"
@@ -25,6 +25,13 @@ function saveToLocalStorage(event) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  axios.get("https://crudcrud.com/api/42fac32cc49442d58a3cf398737b48fc/myData")
+  .then((respone) =>{
+    console.log()
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
   const localStorageObj = localStorage;
   const localstoragekeys  = Object.keys(localStorageObj)
 
