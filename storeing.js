@@ -7,7 +7,7 @@ function showNewUserOnScreen(user){
     }
   
     const parentNode = document.getElementById('listOfUsers');
-    const childHTML = `<li id=${user.name}> ${user.name} - ${user.email}
+    const childHTML = `<li id=${user.name}> ${user.name} - ${user.email} - ${user.phonenumber}
                             <button onclick=deleteUser('${user.name}')> Delete User </button>
                             <button onclick=editUserDetails('${user.name}','${user.email}','${user.phonenumber}')>Edit User </button>
                          </li>`
