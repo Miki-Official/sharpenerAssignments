@@ -2,7 +2,6 @@ function showNewUserOnScreen(user){
     document.getElementById('email').value = '';
     document.getElementById('username').value = '';
     document.getElementById('phonenumber').value ='';
-    // console.log(localStorage.getItem(user.username))
     if(localStorage.getItem(user.email) !== null){
         removeUserFromScreen(user.email)
     }
@@ -20,15 +19,11 @@ function saveToLocalStorage(event) {
     const name = event.target.username.value;
     const email = event.target.emailId.value;
     const phonenumber = event.target.phonenumber.value;
-    // localStorage.setItem('name', name);
-    // localStorage.setItem('email', email);
-    // localStorage.setItem('phonenumber', phonenumber)
     const obj = {
         name,
         email,
         phonenumber
     }
-    //localStorage.setItem(obj.username, JSON.stringify(obj))
     showNewUserOnScreen(obj)
     axios.post("https://crudcrud.com/api/7299cdb14e5b4af58d666ea825918e45/user",obj)
     .then((respone) =>  {
@@ -62,9 +57,8 @@ function saveToLocalStorage(event) {
   })
   
   function editUserDetails( name,emailId, phonenumber){
-
+    document.getElementById('username').value = name; 
     document.getElementById('email').value = emailId;
-    document.getElementById('username').value = name;
     document.getElementById('phonenumber').value =phonenumber;
   
     deleteUser(name,emailId, phonenumber)
