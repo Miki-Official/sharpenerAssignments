@@ -61,25 +61,3 @@ function saveToLocalStorage(event) {
     }
   })
   
-  function editUserDetails(email){
-
-    
-    document.getElementById('username').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('phonenumber').value ='';
-  
-    deleteUser(email)
-  }
-  function deleteUser(email){
-    console.log(email)
-    localStorage.removeItem(email);
-    removeUserFromScreen(email);
-  }
-  function removeUserFromScreen(email){
-    const parentNode = document.getElementById('listOfUsers');
-    const childNodeToBeDeleted = document.getElementById(email);
-    if(childNodeToBeDeleted) {
-        parentNode.removeChild(childNodeToBeDeleted)
-    }
-  }
- 
